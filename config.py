@@ -34,6 +34,15 @@ API_ID = int(environ.get("API_ID", ""))
 API_HASH = environ.get("API_HASH", "")
 ADMINS = [int(x) for x in (os.environ.get("ADMINS", "").split())]
 
+# Get the ADMINS environment variable and sanitize it
+admins_str = os.environ.get("ADMINS", "").replace('(', '').replace(')', '').replace('"', '').replace("'", "")
+
+# Convert the sanitized string to a list of integers
+ADMINS = [int(x) for x in admins_str.split()]
+
+print(ADMINS)  # This line is for debugging to ensure the output is correct
+
+
 # Database Information
 CLONE_DB_URI = environ.get("CLONE_DB_URI", "")
 CDB_NAME = environ.get("CDB_NAME", "clonevjbotz")
