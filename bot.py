@@ -7,7 +7,7 @@ import sys
 import glob
 import importlib
 from pathlib import Path
-from pyrofork import idle
+from pyrogram import idle
 import logging
 import logging.config
 
@@ -18,7 +18,7 @@ import logging.config
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("pyrofork").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 logging.basicConfig(
     level=logging.INFO,
@@ -32,11 +32,11 @@ logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 # Ask Doubt on telegram @KingVJ01
 
 
-from pyrofork import Client, __version__
-from pyrofork.raw.all import layer
+from pyrogram import Client, __version__
+from pyrogram.raw.all import layer
 from config import Var, LOG_CHANNEL
 from typing import Union, Optional, AsyncGenerator
-from pyrofork import types
+from pyrogram import types
 from Script import script 
 from datetime import date, datetime 
 import pytz
@@ -48,7 +48,7 @@ from TechVJ.server import web_server
 # Ask Doubt on telegram @KingVJ01
 
 import asyncio
-from pyrofork import idle
+from pyrogram import idle
 from plugins.clone import restart_bots
 from TechVJ.bot import StreamBot
 from TechVJ.utils.keepalive import ping_server
